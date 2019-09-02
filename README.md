@@ -31,7 +31,7 @@
 To get up and running with the **Intro to CSS Variables** project:
 
 ```bash
-# Open index.html
+# Open
 open index.html
 ```
 

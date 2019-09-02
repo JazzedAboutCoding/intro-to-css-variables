@@ -1,0 +1,99 @@
+/*
+*
+*
+*
+********************************
+* Feature Query / Check Support
+********************************
+*/
+
+@supports (--css: variables) {
+  .color-box:hover .nested-box {
+    background: turquoise;
+  }
+}
+
+/*
+*
+*
+*
+********************************
+* Global Variables
+********************************
+*/
+
+/* attach to :root pseudo-class */
+:root {
+  --my-new-height: 25px;
+}
+
+.color-box:hover .nested-box {
+  height: var(--my-new-height);
+}
+
+/*
+*
+*
+*
+********************************
+* Local Variables
+********************************
+*/
+
+/* attach to element */
+.color-box {
+  --my-new-height: 100px;
+  --bigger: scale(1.2);
+}
+
+.color-box:hover {
+  transform: var(--bigger);
+}
+
+/*
+*
+*
+*
+********************************
+* Internationalization
+********************************
+*/
+
+/* use to for language-dependent values */
+:root,
+:root:lang(en) {
+  --title: 'Box';
+}
+
+:root:lang(fr) {
+  --title: 'Boîte';
+}
+
+:root:lang(es) {
+  --title: 'Caja';
+}
+
+:root:lang(ar) {
+  --title: 'صندوق';
+}
+
+.title::after {
+  content: var(--title);
+}
+
+/*
+*
+*
+*
+********************************
+* Calculated Values
+********************************
+*/
+
+/* use for dynamically computed values */
+.color-box {
+  --x-pos: 0;
+  --y-pos: 0;
+
+  transform: translate(var(--x-pos), var(--y-pos));
+}
